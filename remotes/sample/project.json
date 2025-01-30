@@ -1,0 +1,61 @@
+{
+    "name": "sample",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "remotes/sample/src",
+    "projectType": "application",
+    "tags": [],
+    "targets": {
+      "build": {
+        "executor": "@nx/rspack:rspack",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "defaultConfiguration": "development",
+        "options": {
+          "target": "web",
+          "outputPath": "dist/remotes/sample",
+          "index": "remotes/sample/src/index.html",
+          "main": "remotes/sample/src/main.tsx",
+          "tsConfig": "remotes/sample/tsconfig.app.json",
+          "rspackConfig": "remotes/sample/rspack.config.ts",
+          "assets": [
+            "remotes/sample/src/favicon.ico",
+            "remotes/sample/src/assets"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "mode": "development"
+          },
+          "production": {
+            "mode": "production",
+            "optimization": true,
+            "sourceMap": false
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nx/rspack:dev-server",
+        "options": {
+          "buildTarget": "sample:build:development",
+          "port": 4201
+        },
+        "configurations": {
+          "development": {},
+          "production": {
+            "buildTarget": "sample:build:production"
+          }
+        }
+      },
+      "serve-static": {
+        "executor": "@nx/web:file-server",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "sample:build",
+          "spa": true
+        }
+      }
+    }
+  }
