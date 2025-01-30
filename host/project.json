@@ -19,7 +19,7 @@
           "tsConfig": "host/tsconfig.app.json",
           "rspackConfig": "host/rspack.config.ts",
           "assets": [
-            "host/src/favicon.ico",
+            "host/src/assets/favicon.ico",
             "host/src/assets"
           ]
         },

@@ -19,7 +19,7 @@
           "tsConfig": "remotes/sample/tsconfig.app.json",
           "rspackConfig": "remotes/sample/rspack.config.ts",
           "assets": [
-            "remotes/sample/src/favicon.ico",
+            "remotes/sample/src/assets/favicon.ico",
             "remotes/sample/src/assets"
           ]
         },
