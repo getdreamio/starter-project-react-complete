@@ -14,8 +14,8 @@
         "options": {
           "target": "web",
           "outputPath": "dist/remotes/sample",
-          "index": "remotes/sample/src/index.html",
-          "main": "remotes/sample/src/main.tsx",
+          "index": "remotes/sample/public/index.html",
+          "main": "remotes/sample/src/index.ts",
           "tsConfig": "remotes/sample/tsconfig.app.json",
           "rspackConfig": "remotes/sample/rspack.config.ts",
           "assets": [

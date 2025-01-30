@@ -3,18 +3,13 @@ import { ModuleFederationPlugin } from '@module-federation/enhanced/rspack';
 type ModuleFederationConfig = ConstructorParameters<typeof ModuleFederationPlugin>[0];
 
 const config: ModuleFederationConfig = {
-    name: 'products',
+    name: 'host',
     filename: 'remoteEntry.js',
     experiments: {
         federationRuntime: 'hoisted',
-        externalRuntime: true
+        provideExternalRuntime: true
     },
-    exposes: {
-        './Types': './src/types.d.ts',
-        './ProductsList': './src/components/ProductsList/ProductsList.tsx',
-        './useTest': './src/components/hooks/useTest.ts',
-        './ProductsRouter': './src/components/ProductsRouter.tsx'
-    },
+    remotes: {},
     shared: {
         "react": {
             singleton: true
@@ -22,15 +17,12 @@ const config: ModuleFederationConfig = {
         "react-dom": {
             singleton: true
         },
-        "@tanstack/react-query": {
-            singleton: true
-        },
-        "@custom-mfe/store": {
+        "react-router": {
             singleton: true
         },
         "react-router-dom": {
             singleton: true
         }
-    }
+    },
 };
 export default config;

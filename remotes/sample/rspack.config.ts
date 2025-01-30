@@ -1,13 +1,20 @@
-const { withBaseRspack } = require("@dream.mf/bundlers");
+import { composePlugins, withNx, withReact } from '@nx/rspack';
+import mfConfig from './module-federation';
+import { ModuleFederationPlugin } from '@module-federation/enhanced/rspack';
 
-const config = withBaseRspack({
-	devServer: { port: 3010 },
-	federationConfig: {
-		name: "remote_sample",
-		exposes: {
-			"./SamplePage": "./src/_app"
-		},
-	},
-}, true);
+module.exports = composePlugins(withNx(), withReact(), (config, ctx) => {
+  config.plugins?.push(new ModuleFederationPlugin(mfConfig));
 
-module.exports = config;
+  config.output = {
+    ...config.output,
+    publicPath: 'auto'
+  }
+
+  config.devServer = {
+    ...config.devServer,
+	port: 3010,
+    host: '127.0.0.1'
+  }
+
+  return config;
+});

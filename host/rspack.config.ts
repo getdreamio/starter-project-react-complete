@@ -1,28 +1,16 @@
-const { withBaseRspack } = require("@dream.mf/bundlers");
+import { composePlugins, withNx, withReact } from '@nx/rspack';
+import mfConfig from './module-federation';
+import { ModuleFederationPlugin } from '@module-federation/enhanced/rspack';
 
-const config = withBaseRspack({
-    devServer: { port: 3001 },
-    federationConfig: { name: "container" }
-}, true);
+export default composePlugins(withNx(), withReact(), (config, ctx) => {
+  config.plugins?.push(new ModuleFederationPlugin(mfConfig));
 
-// Add tailwindcss support
-config.module.rules.push({
-  test: /.css$/,
-  use: [
-    'style-loader',
-    'css-loader',
-    {
-      loader: 'postcss-loader',
-      options: {
-        postcssOptions: {
-          plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-          },
-        },
-      },
-    },
-  ],
+  config.resolve = {
+    ...(config.resolve ?? {}),
+    alias: {
+      ...(config.resolve?.alias ?? {}),
+    }
+  }
+
+  return config;
 });
-
-module.exports = config;

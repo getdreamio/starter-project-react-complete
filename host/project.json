@@ -14,8 +14,8 @@
         "options": {
           "target": "web",
           "outputPath": "dist/host",
-          "index": "host/src/index.html",
-          "main": "host/src/main.tsx",
+          "index": "host/public/index.html",
+          "main": "host/src/index.ts",
           "tsConfig": "host/tsconfig.app.json",
           "rspackConfig": "host/rspack.config.ts",
           "assets": [
