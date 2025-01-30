@@ -1,5 +1,4 @@
 const { withBaseRspack } = require("@dream.mf/bundlers");
-const { join } = require('node:path');
 
 const config = withBaseRspack({
     devServer: { port: 3001 },

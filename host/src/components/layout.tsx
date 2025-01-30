@@ -2,7 +2,11 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { DreamMFAuthGuard } from "@dream.mf/oidc";
 
-const Layout = ({ children }) => {
+export interface LayoutProps {
+  children: React.ReactNode | any;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-[#273360] p-4 text-white shadow-lg">
