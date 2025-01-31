@@ -6,7 +6,7 @@ const IndexPage = () => {
   const [rosStatus, setRosStatus] = useState('Checking...');
 
   useEffect(() => {
-    fetch('https://localhost:4001/health')
+    fetch('http://localhost:4000/health')
       .then(response => response.text())
       .then(data => {
         setRosStatus(data);
