@@ -17,6 +17,7 @@
     "@dream.mf/ros": "0.4.0",
     "@dream.mf/logging": "1.5.1",
     "@dream.mf/oidc": "1.1.0",
+    "react-error-boundary": "4.1.2",
     "@module-federation/enhanced": "0.8.7",
     "@module-federation/runtime": "0.8.7"
   },

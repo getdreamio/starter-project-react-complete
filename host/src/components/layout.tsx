@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { DreamMFAuthGuard } from "@dream.mf/oidc";
+import { ErrorBoundary } from 'react-error-boundary';
 
 export interface LayoutProps {
   children: React.ReactNode | any;
@@ -27,7 +28,9 @@ const Layout = ({ children }: LayoutProps) => {
       </header>
       <main className="flex-1 container mx-auto pt-8">
         <div className="bg-[#212946] p-6 rounded-lg shadow-md text-white">
-          {children}
+          <ErrorBoundary fallback={<div>Oops, an error has occurred.</div>}>
+            {children}
+          </ErrorBoundary>
         </div>
       </main>
     </div>
