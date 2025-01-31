@@ -16,7 +16,7 @@ import setupAuthentication from './config/setup-auth';
 const App = () => {
 
   useEffect(() => {
-    setupRosRuntime(process.env.DREAM_ROS_API, process.env.DREAM_ROS_ACCESSKEY);
+    setupRosRuntime(process.env.NX_PUBLIC_DREAM_ROS_API, process.env.NX_PUBLIC_DREAM_ROS_ACCESSKEY);
   }, []);
 
   return (

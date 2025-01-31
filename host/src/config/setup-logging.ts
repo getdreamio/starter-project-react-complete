@@ -6,7 +6,7 @@ import { LogConfig } from '@dream.mf/logging';
 const setupLogging = () : LogConfig => {
     return {
         logInfo: (detail) => { console.log('Mock Log Aggregator', detail.detail); },
-        debug: true,
+        debug: false,
     } as unknown as LogConfig;
 };
 

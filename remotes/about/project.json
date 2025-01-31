@@ -38,7 +38,7 @@
         "executor": "@nx/rspack:dev-server",
         "options": {
           "buildTarget": "about:build:development",
-          "port": 4201
+          "port": 3011
         },
         "configurations": {
           "development": {},
