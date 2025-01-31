@@ -29,6 +29,11 @@ const IndexPage = () => {
        Please ensure you have run the ROS setup script and are connected to the ROS network.
       </p>
       <p>ROS Status: {rosStatus}</p>
+
+      <p className="mb-2 mt-8">
+       This project is stubbed out with auth0 for the identity provider for testing purposes.
+      </p>
+      <p>Login Credentials: testuser@dream.mf / Password123</p>
     </div>
     </>
     
