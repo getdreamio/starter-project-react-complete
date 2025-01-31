@@ -4,7 +4,7 @@ import Routing from "./routes";
 import Layout from './components/layout';
 
 // Tailwindcss theme
-import "./assets/index.css";
+import "./index.css";
 
 // Dream features & configuration
 import { setupRosRuntime } from '@dream.mf/ros';

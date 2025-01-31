@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
       <header className="bg-[#273360] p-4 text-white shadow-lg">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/favicon.ico" alt="Logo" className="h-8 w-8 mr-3" />
+            <img src="/images/favicon.ico" alt="Logo" className="h-8 w-8 mr-3" />
             <NavLink to="/" className="text-3xl">Dream.mf Starter</NavLink>
           </div>
           <nav className="flex space-x-4">

@@ -19,8 +19,8 @@
           "tsConfig": "host/tsconfig.app.json",
           "rspackConfig": "host/rspack.config.ts",
           "assets": [
-            "host/src/assets/favicon.ico",
-            "host/src/assets"
+            "host/src/images/favicon.ico",
+            "host/src/images/dream_logo.png"
           ]
         },
         "configurations": {

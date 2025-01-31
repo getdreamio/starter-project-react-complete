@@ -23,30 +23,5 @@ export default composePlugins(withNx(), withReact(), (config, ctx) => {
     host: '127.0.0.1'
   };
 
-  // if (!config.module) {
-  //   config.module = {};
-  // }
-  // if (!config.module.rules) {
-  //   config.module.rules = [];
-  // }
-  // config.module.rules.push({
-  //   test: /.css$/,
-  //   use: [
-  //     'style-loader',
-  //     'css-loader',
-  //     {
-  //       loader: 'postcss-loader',
-  //       options: {
-  //         postcssOptions: {
-  //           plugins: {
-  //             tailwindcss: {},
-  //             autoprefixer: {},
-  //           },
-  //         },
-  //       },
-  //     },
-  //   ],
-  // });
-
   return config;
 });
