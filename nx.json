@@ -14,7 +14,6 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "679ad055900d1c5efc351005",
   "plugins": [
     {
       "plugin": "@nx/eslint/plugin",
