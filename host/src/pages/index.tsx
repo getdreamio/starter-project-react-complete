@@ -28,10 +28,16 @@ const IndexPage = () => {
       <p className="mb-2 mt-8">
        Please ensure you have run the ROS setup script and are connected to the ROS network.
       </p>
-      <p>ROS Status: {rosStatus}</p>
+      <p>For ROS login and service information, please visit about page.</p>
+      <p>ROS Status: <span style={{
+        padding: '4px 8px',
+        borderRadius: '4px',
+        backgroundColor: rosStatus === '"Service is healthy"' ? '#4ade80' : '#ef4444',
+        color: 'white'
+      }}>{rosStatus}</span></p>
 
       <p className="mb-2 mt-8">
-       This project is stubbed out with auth0 for the identity provider for testing purposes.
+       This sample frontend is stubbed out with auth0 for the identity provider for testing purposes.
       </p>
       <p>Login Credentials: testuser@dream.mf / Password123</p>
     </div>
