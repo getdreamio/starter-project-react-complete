@@ -4,7 +4,7 @@ import PageLoader from '../components/page-loader';
 
 const AboutRemote = React.lazy(() =>
   importRemote({
-      remoteUrl: process.env.REMOTE_ABOUT_URL,
+      remoteUrl: process.env.NX_PUBLIC_REMOTE_ABOUT_URL,
       scope: 'remote_about',
       module: 'AboutPage',
       remoteUrlFallback: null

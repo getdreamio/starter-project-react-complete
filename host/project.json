@@ -41,7 +41,7 @@
         ],
         "options": {
           "buildTarget": "host:build:development",
-          "port": 3000
+          "port": 3001
         },
         "configurations": {
           "development": {},

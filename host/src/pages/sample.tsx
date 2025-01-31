@@ -6,7 +6,7 @@ import { DreamMFAuthGuard } from '@dream.mf/oidc';
 
 const SampleRemote = React.lazy(() =>
   importRemote({
-      remoteUrl: process.env.REMOTE_SAMPLE_URL,
+      remoteUrl: process.env.NX_PUBLIC_REMOTE_SAMPLE_URL,
       scope: 'remote_sample',
       module: 'SamplePage',
       remoteUrlFallback: null

@@ -19,7 +19,7 @@ export default composePlugins(withNx(), withReact(), (config, ctx) => {
 
   config.devServer = {
     ...config.devServer,
-	  port: 3000,
+	  port: 3001,
     host: '127.0.0.1'
   };
 
