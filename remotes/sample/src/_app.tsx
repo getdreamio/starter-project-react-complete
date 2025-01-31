@@ -9,7 +9,7 @@ const Sample = ({ id }: SampleProps) => {
   return (
     <>
       <Helmet>
-        <title>Microfrontends | Sample</title>
+        <title>Dream.mf | Sample</title>
       </Helmet>
       <div>
         <h2 className="text-2xl font-bold mb-4">Remote App - Sample</h2>
