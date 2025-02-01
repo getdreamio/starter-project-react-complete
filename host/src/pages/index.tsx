@@ -25,10 +25,10 @@ const IndexPage = () => {
       <div className="p-4 text-center">
       <img src={'images/dream_logo.png'} alt="Logo" style={{ height: 200 }} className="mx-auto" />
 
-      <p className="mb-2 mt-8">
+      <p className="mt-8">
        Please ensure you have run the ROS setup script and are connected to the ROS network.
       </p>
-      <p>For ROS login and service information, please visit about page.</p>
+      <p className="mb-2">Login Credentials: root@dreammf.com / Dr34m!12345</p>
       <p>ROS Status: <span style={{
         padding: '4px 8px',
         borderRadius: '4px',
