@@ -6,20 +6,21 @@ import { useGetRemoteByAccessKey } from '@dream.mf/ros';
 const AboutPage = () => {
 
   const AboutRemote = React.lazy(async () => {
-    const remote = await useGetRemoteByAccessKey({
-      rosUrl: process.env.NX_PUBLIC_DREAM_ROS_API, 
-      accessKey: process.env.NX_PUBLIC_DREAM_ROS_ACCESSKEY,
-      remoteKey: 'remote_about'
-    });
-    if (!remote) {
+    try {
+      const remote = await useGetRemoteByAccessKey({
+        rosUrl: process.env.NX_PUBLIC_DREAM_ROS_API, 
+        accessKey: process.env.NX_PUBLIC_DREAM_ROS_ACCESSKEY,
+        remoteKey: 'remote_about'
+      });
+      return importRemote({
+          remoteUrl: remote?.url,
+          scope: 'remote_about',
+          module: 'AboutPage',
+          //remoteUrlFallback: process.env.NX_PUBLIC_REMOTE_ABOUT_URL
+      })
+    } catch (error) {
       return <>Error: Unable to find remote via ros.</>
     }
-    return importRemote({
-        remoteUrl: remote?.url,
-        scope: 'remote_about',
-        module: 'AboutPage',
-        remoteUrlFallback: process.env.NX_PUBLIC_REMOTE_ABOUT_URL
-    })
   });
 
   return (

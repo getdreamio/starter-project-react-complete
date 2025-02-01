@@ -9,20 +9,24 @@ const SamplePage = () => {
   let { id } = useParams();
 
   const SampleRemote = React.lazy(async () => {
-    const remote = await useGetRemoteByAccessKey({
-      rosUrl: process.env.NX_PUBLIC_DREAM_ROS_API, 
-      accessKey: process.env.NX_PUBLIC_DREAM_ROS_ACCESSKEY,
-      remoteKey: 'remote_sample'
-    });
-    if (!remote) {
+    try {
+      const remote = await useGetRemoteByAccessKey({
+        rosUrl: process.env.NX_PUBLIC_DREAM_ROS_API, 
+        accessKey: process.env.NX_PUBLIC_DREAM_ROS_ACCESSKEY,
+        remoteKey: 'remote_sample'
+      });
+      if (!remote) {
+        return <>Error: Unable to find remote via ros.</>
+      }
+      return importRemote({
+          remoteUrl: remote?.url,
+          scope: remote?.scope,
+          module: 'SamplePage',
+          //remoteUrlFallback: process.env.NX_PUBLIC_REMOTE_SAMPLE_URL
+      })
+    } catch (error) {
       return <>Error: Unable to find remote via ros.</>
     }
-    return importRemote({
-        remoteUrl: remote?.url,
-        scope: remote?.scope,
-        module: 'SamplePage',
-        remoteUrlFallback: process.env.NX_PUBLIC_REMOTE_SAMPLE_URL
-    })
   });
 
   return (
