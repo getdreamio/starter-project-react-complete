@@ -28,7 +28,7 @@ const IndexPage = () => {
       <p className="mt-8">
        Please ensure you have run the ROS setup script and are connected to the ROS network.
       </p>
-      <p className="mb-2">Login Credentials: root@dreammf.com / Dr34m!12345</p>
+      <p className="mb-2">Login Credentials: root@getdream.io / Dr34m!12345</p>
       <p>ROS Status: <span style={{
         padding: '4px 8px',
         borderRadius: '4px',
